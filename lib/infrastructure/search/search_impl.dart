@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:dio/dio.dart';
 import 'package:injectable/injectable.dart';
 import 'package:netflix/domain/core/api_end_points.dart';
@@ -11,8 +13,9 @@ class SearchIpl implements SearchService {
   @override
   Future<Either<MainFailure, SearchRep>> searchMovies(
       {required String movieQuery}) async {
+    log(movieQuery);
     try {
-      final Response response = await Dio(BaseOptions()).get(
+      final response = await Dio(BaseOptions()).get(
         ApiEndPoints.searchlink,
         queryParameters: {
           'query': movieQuery,
@@ -25,6 +28,7 @@ class SearchIpl implements SearchService {
         return const Left(MainFailure.serverFailure());
       }
     } catch (e) {
+      log(e.toString());
       return const Left(MainFailure.clientFailure());
     }
   }
