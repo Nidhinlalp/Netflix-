@@ -19,10 +19,6 @@ class DownloadsRepository implements IDownloadsRepo {
           return Downloads.fromJson(e);
         }).toList();
 
-        // final List<Downloads> downloadsList = [];
-        // for (final raw in response.data) {
-        //   downloadsList.add(Downloads.fromJson(raw as Map<String, dynamic>));
-        // }
         return Right(downloadsList);
       } else {
         return const Left(MainFailure.serverFailure());

@@ -1,10 +1,12 @@
 import 'package:dio/dio.dart';
+import 'package:injectable/injectable.dart';
 import 'package:netflix/domain/core/api_end_points.dart';
 import 'package:netflix/domain/search/model/search_rep/search_rep.dart';
 import 'package:netflix/domain/core/main_failiure/main_failures.dart';
 import 'package:dartz/dartz.dart';
 import 'package:netflix/domain/search/model/search_rep/search_servivce.dart';
 
+@LazySingleton(as: SearchService)
 class SearchIpl implements SearchService {
   @override
   Future<Either<MainFailure, SearchRep>> searchMovies(

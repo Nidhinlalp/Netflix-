@@ -5,10 +5,6 @@ import 'package:netflix/application/search/search_bloc.dart';
 import 'package:netflix/core/colors/colors.dart';
 import 'package:netflix/core/size/constsaize.dart';
 import 'package:netflix/presentation/search/widget/search_idile.dart';
-import 'package:netflix/presentation/search/widget/search_result_page.dart';
-
-const imageUrl =
-    'https://www.themoviedb.org/t/p/w533_and_h300_bestv2/xDMIl84Qo5Tsu62c9DGWhmPI67A.jpg';
 
 class ScreenSearch extends StatelessWidget {
   const ScreenSearch({super.key});
@@ -49,7 +45,10 @@ class ScreenSearch extends StatelessWidget {
 }
 
 class TopSearchItemTile extends StatelessWidget {
-  const TopSearchItemTile({super.key});
+  final String title;
+  final String imageUrl;
+  const TopSearchItemTile(
+      {super.key, required this.imageUrl, required this.title});
 
   @override
   Widget build(BuildContext context) {
@@ -59,17 +58,18 @@ class TopSearchItemTile extends StatelessWidget {
         Container(
           width: screenwidth * 0.35,
           height: 80,
-          decoration: const BoxDecoration(
+          decoration: BoxDecoration(
             image: DecorationImage(
               fit: BoxFit.cover,
               image: NetworkImage(imageUrl),
             ),
           ),
         ),
-        const Expanded(
+        kwidth,
+        Expanded(
           child: Text(
-            'Movie Name',
-            style: TextStyle(
+            title,
+            style: const TextStyle(
               color: kwhite,
               fontWeight: FontWeight.bold,
               fontSize: 18,
