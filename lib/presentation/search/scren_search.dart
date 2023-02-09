@@ -36,7 +36,7 @@ class ScreenSearch extends StatelessWidget {
                   color: Colors.grey,
                 ),
                 style: const TextStyle(color: Colors.white54),
-                onChanged: (value) {
+                onSubmitted: (value) {
                   if (value.isEmpty) {
                     return;
                   }
