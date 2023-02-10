@@ -1,4 +1,3 @@
-import 'dart:convert';
 import 'dart:developer';
 
 import 'package:dio/dio.dart';
@@ -14,7 +13,6 @@ getHotandNewComingSoon() async {
         await Dio(BaseOptions()).get(ApiEndPoints.upcomingmovie);
 
     if (response.statusCode == 200 || response.statusCode == 201) {
-      log("200 from ComingSoon");
       var json = response.data;
       for (var index = 0; index < json["results"].length; index++) {
         resultComingSoon.value.add(HotAndNewComingSoon.fromJson(json, index));

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:netflix/application/hotandnew/every_one_wathing.dart';
 import 'package:netflix/application/hotandnew/hot_and_new.dart';
 import 'package:netflix/core/colors/colors.dart';
 import 'package:netflix/core/size/constsaize.dart';
@@ -76,10 +77,20 @@ class ScreenNewAndHot extends StatelessWidget {
 }
 
 Widget buildEveryoneWatching() {
-  return ListView.builder(
-    itemCount: resultComingSoon.value.length,
-    itemBuilder: (context, index) => const EveryOneWatchingWidget(),
-  );
+  return ValueListenableBuilder(
+      valueListenable: resultEveryWatching,
+      builder: (context, everyWatching, _) {
+        return ListView.builder(
+          itemCount: everyWatching.length,
+          itemBuilder: (context, index) {
+            return EveryOneWatchingWidget(
+              bagroudimage: everyWatching[index].bagroudimage,
+              descrption: everyWatching[index].descrption,
+              title: everyWatching[index].title,
+            );
+          },
+        );
+      });
 }
 
 Widget buildCommingSoon() {

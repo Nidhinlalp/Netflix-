@@ -1,12 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:netflix/core/colors/colors.dart';
+import 'package:netflix/core/costurl/strings.dart';
 import 'package:netflix/core/size/constsaize.dart';
 import 'package:netflix/presentation/home/coutom_home_icon_widget.dart';
-import 'package:netflix/widgets/video_widget.dart';
 
 class EveryOneWatchingWidget extends StatelessWidget {
   const EveryOneWatchingWidget({
     Key? key,
+    required this.bagroudimage,
+    required this.descrption,
+    required this.title,
   }) : super(key: key);
+  final String bagroudimage;
+  final String descrption;
+  final String title;
 
   @override
   Widget build(BuildContext context) {
@@ -14,22 +21,22 @@ class EveryOneWatchingWidget extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         khight,
-        const Padding(
-          padding: EdgeInsets.symmetric(horizontal: 8.0),
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 8.0),
           child: Text(
-            'Friends',
-            style: TextStyle(
+            title,
+            style: const TextStyle(
               fontSize: 25,
               fontWeight: FontWeight.bold,
             ),
           ),
         ),
         khight,
-        const Padding(
-          padding: EdgeInsets.symmetric(horizontal: 8.0),
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 8.0),
           child: Text(
-            "Landing the lead in the school musical is a dream come true for jodi, until the pressure sends her condidence -- and her releshtionship -- into a tallispin.",
-            style: TextStyle(
+            descrption,
+            style: const TextStyle(
               fontSize: 15,
               color: Colors.grey,
               fontWeight: FontWeight.w900,
@@ -37,7 +44,38 @@ class EveryOneWatchingWidget extends StatelessWidget {
           ),
         ),
         khight50,
-        // const VideoWidget(bgimage: ),
+        Stack(
+          children: [
+            SizedBox(
+              width: double.infinity,
+              height: 200,
+              child: Image.network(
+                '$imageAppendUrl$bagroudimage',
+                fit: BoxFit.cover,
+                loadingBuilder: (context, child, loadingProgress) =>
+                    loadingProgress == null
+                        ? child
+                        : const CircularProgressIndicator(),
+              ),
+            ),
+            Positioned(
+              bottom: 10,
+              right: 10,
+              child: CircleAvatar(
+                radius: 22,
+                backgroundColor: Colors.black26,
+                child: IconButton(
+                  onPressed: () {},
+                  icon: const Icon(
+                    Icons.volume_off_outlined,
+                    color: kwhite,
+                    size: 20,
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ),
         Row(
           mainAxisAlignment: MainAxisAlignment.end,
           children: const [
