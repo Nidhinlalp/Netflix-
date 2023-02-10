@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:netflix/application/hotandnew/hot_and_new.dart';
 import 'package:netflix/core/colors/colors.dart';
 import 'package:netflix/core/size/constsaize.dart';
-import 'package:netflix/presentation/home/coutom_home_icon_widget.dart';
 import 'package:netflix/presentation/new_and_hot/comming_soon_widget.dart';
 import 'package:netflix/presentation/new_and_hot/every_one_see_widget.dart';
-import 'package:netflix/widgets/video_widget.dart';
 
 class ScreenNewAndHot extends StatelessWidget {
   const ScreenNewAndHot({super.key});
@@ -60,10 +59,17 @@ class ScreenNewAndHot extends StatelessWidget {
             ),
           ),
         ),
-        body: TabBarView(children: [
-          buildCommingSoon(),
-          buildEveryoneWatching(),
-        ]),
+        body: Column(
+          children: [
+            khight20,
+            Expanded(
+              child: TabBarView(children: [
+                buildCommingSoon(),
+                buildEveryoneWatching(),
+              ]),
+            ),
+          ],
+        ),
       ),
     );
   }
@@ -71,14 +77,26 @@ class ScreenNewAndHot extends StatelessWidget {
 
 Widget buildEveryoneWatching() {
   return ListView.builder(
-    itemCount: 10,
+    itemCount: resultComingSoon.value.length,
     itemBuilder: (context, index) => const EveryOneWatchingWidget(),
   );
 }
 
 Widget buildCommingSoon() {
-  return ListView.builder(
-    itemCount: 10,
-    itemBuilder: (context, index) => const CommingSoonWidget(),
-  );
+  return ValueListenableBuilder(
+      valueListenable: resultComingSoon,
+      builder: (context, commingsoonWidget, _) {
+        return ListView.builder(
+          itemCount: commingsoonWidget.length,
+          itemBuilder: (context, index) => commingsoonWidget.isEmpty
+              ? const CircularProgressIndicator()
+              : CommingSoonWidget(
+                  description: commingsoonWidget[index].descrption,
+                  month: commingsoonWidget[index].relesedate,
+                  date: commingsoonWidget[index].relesedate,
+                  movieName: commingsoonWidget[index].title,
+                  bgimage: commingsoonWidget[index].bagroudimage,
+                ),
+        );
+      });
 }

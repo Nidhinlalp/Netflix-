@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:netflix/core/colors/colors.dart';
+import 'package:netflix/core/costurl/strings.dart';
 
 class VideoWidget extends StatelessWidget {
+  final bgimage;
   const VideoWidget({
     Key? key,
+    required this.bgimage,
   }) : super(key: key);
 
   @override
@@ -14,8 +17,12 @@ class VideoWidget extends StatelessWidget {
           width: double.infinity,
           height: 200,
           child: Image.network(
-            "https://www.themoviedb.org/t/p/w533_and_h300_bestv2/tFlSDoWQsAZ2qjICKzfP5Yw6zM5.jpg",
+            '$imageAppendUrl$bgimage',
             fit: BoxFit.cover,
+            loadingBuilder: (context, child, loadingProgress) =>
+                loadingProgress == null
+                    ? child
+                    : const CircularProgressIndicator(),
           ),
         ),
         Positioned(

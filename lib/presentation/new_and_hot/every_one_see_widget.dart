@@ -37,7 +37,7 @@ class EveryOneWatchingWidget extends StatelessWidget {
           ),
         ),
         khight50,
-        const VideoWidget(),
+        // const VideoWidget(bgimage: ),
         Row(
           mainAxisAlignment: MainAxisAlignment.end,
           children: const [
