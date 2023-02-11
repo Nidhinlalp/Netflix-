@@ -83,15 +83,16 @@ Widget buildEveryoneWatching() {
       valueListenable: resultEveryWatching,
       builder: (context, everyWatching, _) {
         return ListView.builder(
-          itemCount: everyWatching.length,
-          itemBuilder: (context, index) {
-            return EveryOneWatchingWidget(
-              bagroudimage: everyWatching[index].bagroudimage,
-              descrption: everyWatching[index].descrption,
-              title: everyWatching[index].title,
-            );
-          },
-        );
+            itemCount: everyWatching.length,
+            itemBuilder: (context, index) => everyWatching.isNotEmpty
+                ? EveryOneWatchingWidget(
+                    bagroudimage: everyWatching[index].bagroudimage,
+                    descrption: everyWatching[index].descrption,
+                    title: everyWatching[index].title,
+                  )
+                : const Center(
+                    child: CircularProgressIndicator(),
+                  ));
       });
 }
 
@@ -102,7 +103,7 @@ Widget buildCommingSoon() {
         return ListView.builder(
           itemCount: commingsoonWidget.length,
           itemBuilder: (context, index) => commingsoonWidget.isEmpty
-              ? const CircularProgressIndicator()
+              ? const Center(child: CircularProgressIndicator())
               : CommingSoonWidget(
                   description: commingsoonWidget[index].descrption,
                   month: commingsoonWidget[index].relesedate,
