@@ -7,11 +7,11 @@ import 'package:netflix/application/home/tense_drama.dart';
 import 'package:netflix/application/home/top_10_show_in_india_today.dart';
 import 'package:netflix/application/home/trending_now.dart';
 import 'package:netflix/core/colors/colors.dart';
-import 'package:netflix/core/costurl/netflix_prifile_pitchure.dart';
 import 'package:netflix/core/size/constsaize.dart';
 import 'package:netflix/presentation/home/baground_card.dart';
 import 'package:netflix/presentation/home/number_title_card.dart';
 import 'package:netflix/widgets/main_title_card.dart';
+import 'package:netflix/widgets/netflix-profile.dart';
 
 ValueNotifier<bool> scrollNotifire = ValueNotifier(true);
 
@@ -152,25 +152,6 @@ class ScreenHome extends StatelessWidget {
             ),
           );
         },
-      ),
-    );
-  }
-}
-
-class NetflixProfile extends StatelessWidget {
-  const NetflixProfile({
-    Key? key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(
-        right: 10.0,
-      ),
-      child: Image.network(
-        neflixprofile,
-        width: 30,
       ),
     );
   }
