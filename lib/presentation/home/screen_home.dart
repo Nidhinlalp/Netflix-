@@ -53,11 +53,8 @@ class ScreenHome extends StatelessWidget {
                                         );
                                       }
                                       return const Center(
-                                        child: SizedBox(
-                                          height: 100,
-                                          child: CircularProgressIndicator(
-                                            strokeWidth: 2,
-                                          ),
+                                        child: CircularProgressIndicator(
+                                          strokeWidth: 2,
                                         ),
                                       );
                                     }),
@@ -72,7 +69,9 @@ class ScreenHome extends StatelessWidget {
                                       );
                                     }
                                     return const Center(
-                                      child: CircularProgressIndicator(),
+                                      child: CircularProgressIndicator(
+                                        strokeWidth: 2,
+                                      ),
                                     );
                                   },
                                 ),
