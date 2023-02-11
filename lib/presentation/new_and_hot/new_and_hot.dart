@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:netflix/application/hotandnew/every_one_wathing.dart';
-import 'package:netflix/application/hotandnew/hot_and_new.dart';
+import 'package:netflix/application/hotandnew/coming_soon.dart';
 import 'package:netflix/core/colors/colors.dart';
+import 'package:netflix/core/costurl/netflix_prifile_pitchure.dart';
 import 'package:netflix/core/size/constsaize.dart';
 import 'package:netflix/presentation/new_and_hot/comming_soon_widget.dart';
 import 'package:netflix/presentation/new_and_hot/every_one_see_widget.dart';
@@ -27,13 +28,14 @@ class ScreenNewAndHot extends StatelessWidget {
             actions: [
               const Icon(
                 Icons.cast_outlined,
+                size: 30,
                 color: kwhite,
               ),
               kwidth,
-              Container(
-                width: 25,
-                height: 20,
-                color: Colors.blue,
+              Image.network(
+                neflixprofile,
+                width: 30,
+                height: 30,
               ),
               kwidth,
             ],

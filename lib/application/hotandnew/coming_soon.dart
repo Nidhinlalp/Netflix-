@@ -2,7 +2,7 @@ import 'dart:developer';
 
 import 'package:dio/dio.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:netflix/domain/core/apiandpoinds/api_end_points.dart';
+import 'package:netflix/domain/core/debonce/api_end_points.dart';
 import 'package:netflix/domain/hotandnew/models/hot_and_new_coming_soon.dart';
 
 ValueNotifier<List<HotAndNewComingSoon>> resultComingSoon = ValueNotifier([]);

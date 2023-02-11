@@ -19,7 +19,6 @@ class ScreenDownloads extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final Size size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: const PreferredSize(
         preferredSize: Size.fromHeight(50),
@@ -39,11 +38,6 @@ class ScreenDownloads extends StatelessWidget {
 
 class Section2 extends StatelessWidget {
   Section2({super.key});
-  final List imageList = [
-    "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/vx1u0uwxdlhV2MUzj4VlcMB0N6m.jpg",
-    "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/jrw684BhFJZ9Jac6KJda3hSQkxt.jpg",
-    "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/9PFonBhy4cQy7Jz20NpMygczOkv.jpg"
-  ];
 
   @override
   Widget build(BuildContext context) {

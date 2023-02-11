@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:netflix/core/size/constsaize.dart';
+import 'package:netflix/domain/home/models/home_main_car_model.dart';
 import 'package:netflix/widgets/main_card.dart';
-import 'package:netflix/widgets/main_title.dart';
+import 'package:netflix/widgets/number_card_name_title.dart';
 
 class MainTitleCard extends StatelessWidget {
-  const MainTitleCard({Key? key, required this.title}) : super(key: key);
+  const MainTitleCard({Key? key, required this.title, required this.result})
+      : super(key: key);
   final String title;
 
+  final List<ScrollImageHome> result;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -22,10 +25,10 @@ class MainTitleCard extends StatelessWidget {
           child: ListView(
             scrollDirection: Axis.horizontal,
             children: List.generate(
-              10,
-              (index) => const Padding(
-                padding: EdgeInsets.symmetric(horizontal: 10.0),
-                child: MainCards(),
+              result.length,
+              (index) => Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                child: MainCards(imagUrl: result[index].bagroudimage),
               ),
             ),
           ),

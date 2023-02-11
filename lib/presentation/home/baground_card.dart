@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:netflix/core/size/constsaize.dart';
+import 'package:netflix/core/costurl/strings.dart';
 import 'package:netflix/presentation/home/coutom_home_icon_widget.dart';
 import 'package:netflix/presentation/home/screen_home.dart';
 
 class HomeFirstContainer extends StatelessWidget {
   const HomeFirstContainer({
     Key? key,
+    required this.imageUrl,
   }) : super(key: key);
-
+  final String imageUrl;
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -15,10 +16,12 @@ class HomeFirstContainer extends StatelessWidget {
         Container(
           width: double.infinity,
           height: 600,
-          decoration: const BoxDecoration(
+          decoration: BoxDecoration(
             image: DecorationImage(
               fit: BoxFit.cover,
-              image: NetworkImage(kMainimage),
+              image: NetworkImage(
+                '$imageAppendUrl$imageUrl',
+              ),
             ),
           ),
         ),
@@ -32,9 +35,11 @@ class HomeFirstContainer extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 const CustomButtomWidget(icon: Icons.add, title: "My List"),
-                PlayButton(),
+                playButton(),
                 const CustomButtomWidget(
-                    icon: Icons.info_outline, title: "Info")
+                  icon: Icons.info_outline,
+                  title: "Info",
+                )
               ],
             ),
           ),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:netflix/core/colors/colors.dart';
 import 'package:netflix/core/size/constsaize.dart';
+import 'package:netflix/presentation/home/screen_home.dart';
 
 class AppBarWidget extends StatelessWidget {
   const AppBarWidget({super.key, required this.title});
@@ -21,13 +22,10 @@ class AppBarWidget extends StatelessWidget {
         const Icon(
           Icons.cast_outlined,
           color: kwhite,
+          size: 30,
         ),
         kwidth,
-        Container(
-          width: 25,
-          height: 25,
-          color: Colors.blue,
-        ),
+        const NetflixProfile(),
         kwidth,
       ],
     );

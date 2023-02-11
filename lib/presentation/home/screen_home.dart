@@ -1,6 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:netflix/application/home/home_first_image.dart';
+import 'package:netflix/application/home/home_relese_paster.dart';
+import 'package:netflix/application/home/sout_indian_movie.dart';
+import 'package:netflix/application/home/tense_drama.dart';
+import 'package:netflix/application/home/top_10_show_in_india_today.dart';
+import 'package:netflix/application/home/trending_now.dart';
 import 'package:netflix/core/colors/colors.dart';
+import 'package:netflix/core/costurl/netflix_prifile_pitchure.dart';
 import 'package:netflix/core/size/constsaize.dart';
 import 'package:netflix/presentation/home/baground_card.dart';
 import 'package:netflix/presentation/home/number_title_card.dart';
@@ -13,6 +20,12 @@ class ScreenHome extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    getHomeImage();
+    getHomerelesethePastYear();
+    getHomeTrendingNow();
+    getHomeTendeAndDrama();
+    getHomeSouthIndian();
+    getHomeTop10showindia();
     return Scaffold(
       body: ValueListenableBuilder(
         valueListenable: scrollNotifire,
@@ -30,23 +43,68 @@ class ScreenHome extends StatelessWidget {
             child: Stack(
               children: [
                 ListView(
-                  children: const [
-                    HomeFirstContainer(),
+                  children: [
+                    ValueListenableBuilder(
+                        valueListenable: homefirstimage,
+                        builder: (context, result, _) {
+                          if (result.isNotEmpty) {
+                            return HomeFirstContainer(
+                              imageUrl: result[0].bagroudimage,
+                            );
+                          }
+                          return const Center(
+                            child: CircularProgressIndicator(),
+                          );
+                        }),
                     khight,
-                    MainTitleCard(title: "Released in the past year"),
+                    ValueListenableBuilder(
+                        valueListenable: relesethePastYear,
+                        builder: (context, reslt, _) {
+                          return MainTitleCard(
+                            title: "Released in the past year",
+                            result: reslt,
+                          );
+                        }),
                     khight,
-                    MainTitleCard(title: "Trending Now"),
+                    ValueListenableBuilder(
+                        valueListenable: trendingNow,
+                        builder: (context, resulttensedarama, _) {
+                          return MainTitleCard(
+                            title: "Trending Now",
+                            result: resulttensedarama,
+                          );
+                        }),
                     khight,
-                    NumberTitleCard(),
+                    ValueListenableBuilder(
+                        valueListenable: top10showindia,
+                        builder: (context, resultofsoutindianmovie, _) {
+                          return NumberTitleCard(
+                            result: resultofsoutindianmovie,
+                          );
+                        }),
                     khight,
-                    MainTitleCard(title: " Tense Dramas"),
+                    ValueListenableBuilder(
+                        valueListenable: tendeAndDrama,
+                        builder: (context, resultTenseDrama, _) {
+                          return MainTitleCard(
+                            title: " Tense Dramas",
+                            result: resultTenseDrama,
+                          );
+                        }),
                     khight,
-                    MainTitleCard(title: "Sout indian Cinema"),
+                    ValueListenableBuilder(
+                        valueListenable: southindianmovie,
+                        builder: (context, resultodfsutindianmovie, _) {
+                          return MainTitleCard(
+                            title: "Sout indian Cinema",
+                            result: resultodfsutindianmovie,
+                          );
+                        }),
                   ],
                 ),
                 scrollNotifire.value == true
                     ? AnimatedContainer(
-                        duration: Duration(milliseconds: 1500),
+                        duration: const Duration(milliseconds: 1500),
                         width: double.infinity,
                         height: 80,
                         color: Colors.black.withOpacity(0.3),
@@ -62,15 +120,11 @@ class ScreenHome extends StatelessWidget {
                                 const Spacer(),
                                 const Icon(
                                   Icons.cast_outlined,
+                                  size: 30,
                                   color: kwhite,
                                 ),
                                 kwidth,
-                                Container(
-                                  width: 25,
-                                  height: 25,
-                                  color: Colors.blue,
-                                ),
-                                kwidth,
+                                const NetflixProfile(),
                               ],
                             ),
                             Row(
@@ -103,7 +157,26 @@ class ScreenHome extends StatelessWidget {
   }
 }
 
-TextButton PlayButton() {
+class NetflixProfile extends StatelessWidget {
+  const NetflixProfile({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.only(
+        right: 10.0,
+      ),
+      child: Image.network(
+        neflixprofile,
+        width: 30,
+      ),
+    );
+  }
+}
+
+TextButton playButton() {
   return TextButton.icon(
     onPressed: () {},
     style: ButtonStyle(backgroundColor: MaterialStateProperty.all(kwhite)),

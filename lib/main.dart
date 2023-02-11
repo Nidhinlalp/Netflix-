@@ -4,17 +4,17 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:netflix/application/downloads/downloads_bloc.dart';
 import 'package:netflix/application/fast_laugh/fast_laugh_bloc.dart';
 import 'package:netflix/application/hotandnew/every_one_wathing.dart';
-import 'package:netflix/application/hotandnew/hot_and_new.dart';
+import 'package:netflix/application/hotandnew/coming_soon.dart';
 import 'package:netflix/application/search/search_bloc.dart';
 import 'package:netflix/core/colors/colors.dart';
 import 'package:netflix/domain/core/di/injectable.dart';
-import 'package:netflix/presentation/downloads/main_page/widgets/screen_main_page.dart';
+import 'package:netflix/presentation/main_page/widgets/screen_main_page.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await configureInjection();
-  getHotandNewComingSoon();
   getHotAndSNewEveryWatching();
+  getHotandNewComingSoon();
   runApp(const MyApp());
 }
 
