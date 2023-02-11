@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:netflix/core/colors/colors.dart';
 import 'package:netflix/core/size/constsaize.dart';
-import 'package:netflix/presentation/home/screen_home.dart';
+import 'package:netflix/widgets/netflix-profile.dart';
 
 class AppBarWidget extends StatelessWidget {
   const AppBarWidget({super.key, required this.title});

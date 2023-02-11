@@ -53,51 +53,87 @@ class ScreenHome extends StatelessWidget {
                             );
                           }
                           return const Center(
-                            child: CircularProgressIndicator(),
+                            child: CircularProgressIndicator(
+                              strokeWidth: 2,
+                            ),
                           );
                         }),
                     khight,
                     ValueListenableBuilder(
-                        valueListenable: relesethePastYear,
-                        builder: (context, reslt, _) {
+                      valueListenable: relesethePastYear,
+                      builder: (context, reslt, _) {
+                        if (reslt.isNotEmpty) {
                           return MainTitleCard(
                             title: "Released in the past year",
                             result: reslt,
                           );
-                        }),
+                        }
+                        return const Center(
+                          child: CircularProgressIndicator(),
+                        );
+                      },
+                    ),
                     khight,
                     ValueListenableBuilder(
                         valueListenable: trendingNow,
-                        builder: (context, resulttensedarama, _) {
-                          return MainTitleCard(
-                            title: "Trending Now",
-                            result: resulttensedarama,
+                        builder: (context, trendingNow, _) {
+                          if (trendingNow.isNotEmpty) {
+                            return MainTitleCard(
+                              title: "Trending Now",
+                              result: trendingNow,
+                            );
+                          }
+                          return const Center(
+                            child: CircularProgressIndicator(
+                              strokeWidth: 2,
+                            ),
                           );
                         }),
                     khight,
                     ValueListenableBuilder(
                         valueListenable: top10showindia,
                         builder: (context, resultofsoutindianmovie, _) {
-                          return NumberTitleCard(
-                            result: resultofsoutindianmovie,
+                          if (resultofsoutindianmovie.isNotEmpty) {
+                            return NumberTitleCard(
+                              result: resultofsoutindianmovie,
+                            );
+                          }
+                          return const Center(
+                            child: CircularProgressIndicator(
+                              strokeWidth: 2,
+                            ),
                           );
                         }),
                     khight,
                     ValueListenableBuilder(
                         valueListenable: tendeAndDrama,
                         builder: (context, resultTenseDrama, _) {
-                          return MainTitleCard(
-                            title: " Tense Dramas",
-                            result: resultTenseDrama,
+                          if (resultTenseDrama.isNotEmpty) {
+                            return MainTitleCard(
+                              title: " Tense Dramas",
+                              result: resultTenseDrama,
+                            );
+                          }
+                          return const Center(
+                            child: CircularProgressIndicator(
+                              strokeWidth: 2,
+                            ),
                           );
                         }),
                     khight,
                     ValueListenableBuilder(
                         valueListenable: southindianmovie,
                         builder: (context, resultodfsutindianmovie, _) {
-                          return MainTitleCard(
-                            title: "Sout indian Cinema",
-                            result: resultodfsutindianmovie,
+                          if (resultodfsutindianmovie.isNotEmpty) {
+                            return MainTitleCard(
+                              title: "Sout indian Cinema",
+                              result: resultodfsutindianmovie,
+                            );
+                          }
+                          return const Center(
+                            child: CircularProgressIndicator(
+                              strokeWidth: 2,
+                            ),
                           );
                         }),
                   ],
