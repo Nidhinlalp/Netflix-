@@ -98,19 +98,20 @@ Widget buildEveryoneWatching() {
 
 Widget buildCommingSoon() {
   return ValueListenableBuilder(
-      valueListenable: resultComingSoon,
-      builder: (context, commingsoonWidget, _) {
-        return ListView.builder(
-          itemCount: commingsoonWidget.length,
-          itemBuilder: (context, index) => commingsoonWidget.isEmpty
-              ? const Center(child: CircularProgressIndicator())
-              : CommingSoonWidget(
-                  description: commingsoonWidget[index].descrption,
-                  month: commingsoonWidget[index].relesedate,
-                  date: commingsoonWidget[index].relesedate,
-                  movieName: commingsoonWidget[index].title,
-                  bgimage: commingsoonWidget[index].bagroudimage,
-                ),
-        );
-      });
+    valueListenable: resultComingSoon,
+    builder: (context, commingsoonWidget, _) {
+      return ListView.builder(
+        itemCount: commingsoonWidget.length,
+        itemBuilder: (context, index) => commingsoonWidget.isEmpty
+            ? const Center(child: CircularProgressIndicator())
+            : CommingSoonWidget(
+                description: commingsoonWidget[index].descrption,
+                month: commingsoonWidget[index].relesedate,
+                date: commingsoonWidget[index].relesedate,
+                movieName: commingsoonWidget[index].title,
+                bgimage: commingsoonWidget[index].bagroudimage,
+              ),
+      );
+    },
+  );
 }
