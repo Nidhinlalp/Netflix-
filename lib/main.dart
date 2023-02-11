@@ -1,3 +1,4 @@
+import 'package:custom_splash/custom_splash.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -45,7 +46,15 @@ class MyApp extends StatelessWidget {
           backgroundColor: Colors.black,
           primarySwatch: Colors.blue,
         ),
-        home: ScreenMainPage(),
+        home: CustomSplash(
+          imagePath: 'assets/images/splash.gif',
+          backGroundColor: Colors.black,
+          animationEffect: 'zoom-in',
+          logoSize: 200,
+          home: ScreenMainPage(),
+          duration: 3500,
+          type: CustomSplashType.StaticDuration,
+        ),
       ),
     );
   }
