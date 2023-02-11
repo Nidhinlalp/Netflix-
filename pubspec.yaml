@@ -44,6 +44,7 @@ dependencies:
   share_plus: ^4.0.3
   video_player: ^2.3.0
   custom_splash: ^0.0.2
+  flutter_launcher_icons: ^0.11.0
 
 dev_dependencies:
   build_runner: ^2.3.3
@@ -65,6 +66,7 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/images/splash.gif
+    - assets/images/netflix-logo.png
   #   - images/a_dot_ham.jpeg
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
@@ -89,3 +91,7 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
+flutter_icons:
+  image_path: "assets/images/netflix-logo.png"
+  android: true
+  ios: true
