@@ -20,6 +20,7 @@ class HotAndNewComingSoon {
     id = jsondata["results"][index]["id"];
     descrption = jsondata["results"][index]["overview"];
     verticleposter = jsondata["results"][index]["poster_path"];
+
     relesedate = jsondata["results"][index]["release_date"];
     title = jsondata["results"][index]["title"];
   }
