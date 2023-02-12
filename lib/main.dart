@@ -4,19 +4,19 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:netflix/application/downloads/downloads_bloc.dart';
 import 'package:netflix/application/fast_laugh/fast_laugh_bloc.dart';
-import 'package:netflix/application/home/home_first_image.dart';
-import 'package:netflix/application/home/sout_indian_movie.dart';
-import 'package:netflix/application/home/tense_drama.dart';
-import 'package:netflix/application/home/top_10_show_in_india_today.dart';
-import 'package:netflix/application/home/trending_now.dart';
-import 'package:netflix/application/hotandnew/every_one_wathing.dart';
-import 'package:netflix/application/hotandnew/coming_soon.dart';
+import 'package:netflix/infrastructure/home/home_first_image.dart';
+import 'package:netflix/infrastructure/home/sout_indian_movie.dart';
+import 'package:netflix/infrastructure/home/tense_drama.dart';
+import 'package:netflix/infrastructure/home/top_10_show_in_india_today.dart';
+import 'package:netflix/infrastructure/home/trending_now.dart';
+import 'package:netflix/infrastructure/hotandnew/every_one_wathing.dart';
+import 'package:netflix/infrastructure/hotandnew/coming_soon.dart';
 import 'package:netflix/application/search/search_bloc.dart';
 import 'package:netflix/core/colors/colors.dart';
 import 'package:netflix/domain/core/di/injectable.dart';
 import 'package:netflix/presentation/main_page/widgets/screen_main_page.dart';
 
-import 'application/home/home_relese_paster.dart';
+import 'infrastructure/home/home_relese_paster.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();

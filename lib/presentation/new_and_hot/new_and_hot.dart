@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:netflix/application/hotandnew/every_one_wathing.dart';
-import 'package:netflix/application/hotandnew/coming_soon.dart';
+import 'package:netflix/infrastructure/hotandnew/every_one_wathing.dart';
+import 'package:netflix/infrastructure/hotandnew/coming_soon.dart';
 import 'package:netflix/core/colors/colors.dart';
 import 'package:netflix/core/costurl/netflix_prifile_pitchure.dart';
 import 'package:netflix/core/size/constsaize.dart';

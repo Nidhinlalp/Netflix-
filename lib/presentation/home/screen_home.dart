@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:netflix/application/home/home_first_image.dart';
-import 'package:netflix/application/home/home_relese_paster.dart';
-import 'package:netflix/application/home/sout_indian_movie.dart';
-import 'package:netflix/application/home/tense_drama.dart';
-import 'package:netflix/application/home/top_10_show_in_india_today.dart';
-import 'package:netflix/application/home/trending_now.dart';
+import 'package:netflix/infrastructure/home/home_first_image.dart';
+import 'package:netflix/infrastructure/home/home_relese_paster.dart';
+import 'package:netflix/infrastructure/home/sout_indian_movie.dart';
+import 'package:netflix/infrastructure/home/tense_drama.dart';
+import 'package:netflix/infrastructure/home/top_10_show_in_india_today.dart';
+import 'package:netflix/infrastructure/home/trending_now.dart';
 import 'package:netflix/core/colors/colors.dart';
 import 'package:netflix/core/size/constsaize.dart';
 import 'package:netflix/presentation/home/baground_card.dart';
