@@ -8,6 +8,6 @@ class ApiEndPoints {
   static const tensedrrama = '$kBaseUrl/movie/latest?api_key=$apiKey';
   static const soutindianmovie = '$kBaseUrl/3/person/popular?api_key=$apiKey';
   static const upcomingmovie = '$kBaseUrl/movie/upcoming?api_key=$apiKey';
-  static const top10showindia = '$kBaseUrl/discover/tv?api_key=$apiKey';
+  static const top10showindia = '$kBaseUrl/movie/now_playing?api_key=$apiKey';
   static const homeMainimage = '$kBaseUrl/movie/now_playing?api_key=$apiKey';
 }

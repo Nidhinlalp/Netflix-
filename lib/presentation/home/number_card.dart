@@ -35,6 +35,13 @@ class NumberCard extends StatelessWidget {
                 ),
               ),
             ),
+            // Container(
+            //   width: 150,
+            //   height: 250,
+            //   child: ClipRRect(
+            //       borderRadius: kRadius,
+            //       child: Image.network("$imageAppendUrl$imageUrl"),),
+            // ),
           ],
         ),
         Positioned(
